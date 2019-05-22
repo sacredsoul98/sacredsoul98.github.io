@@ -35,7 +35,7 @@ app.post("/api/students/insert",(req,res)=>{
 })
 //delete existing student
 app.delete('/api/students/delete/:id', function(req,res) {
-    db.Student.findOneAndRemove(req.params.id, function(err,data) {
+    db.Student.findByIdAndDelete(req.params.id, function(err,data) {
         if(!err) {
           console.log("Deleted");
           res.send(data);
